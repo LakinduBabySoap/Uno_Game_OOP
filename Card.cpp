@@ -3,33 +3,41 @@
 
 using namespace std;
 
-Card::Card(Color c, Value v) : color(c), value(v) {
+Card::Card(Color c, Value v) : color(c), value(v)
+{
 }
 
-Color Card::getColor() const {
+Color Card::getColor() const
+{
     return color;
 }
 
-Value Card::getValue() const {
+Value Card::getValue() const
+{
     return value;
 }
 
-void Card::setColor(Color c) {
+void Card::setColor(Color c)
+{
     color = c;
 }
 
-void Card::setValue(Value v) {
+void Card::setValue(Value v)
+{
     value = v;
 }
 
-bool Card::match(Card* top) {
-    return color == top->getColor() || value == top->getValue();
+bool Card::match(Card *top)
+{
+    return color == top->getColor() || value == top->getValue(); // checking if the color or value matches
 }
 
-void Card::play(GameState& /* uno */) {
+void Card::play(GameState & /* uno */)
+{
     cout << "Discarded " << this->toString() << endl;
 }
 
-string Card::toString() {
+string Card::toString()
+{
     return string() + "[" + COLORS[int(color)][0] + to_string(int(value)) + "]";
 }

@@ -7,8 +7,8 @@ class DiscardPile : public Deck
 {
 public:
     DiscardPile();
-    Card* top() const;
-    void stack(Card* card);
+    Card *top() const; // function returns Card object (no modifying of the object)
+    void stack(Card *card);
 };
 
 #endif // DISCARDPILE_H
